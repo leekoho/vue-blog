@@ -1,0 +1,215 @@
+code, pre
+  line-height 2
+  font-family $font-family-code
+  font-size $font-size-code
+  background-color #f5f5f5
+  -webkit-font-smoothing initial
+  -moz-osx-font-smoothing initial
+.preview-area h3:before {
+  content: "# ";
+  color: #42b983;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.preview-area  figure {
+  margin: 1.2em 0;
+}
+.preview-area  p > img
+  display: block
+  margin: 0 auto
+.preview-area  p,
+.preview-area  ul,
+.preview-area  ol {
+  //line-height: 1.6em;
+  //margin: 1.2em 0 -1.2em;
+  padding-bottom: 1.2em;
+  position: relative;
+  z-index: 1;
+}
+//.preview-area  p
+//  text-indent 2em
+.preview-area  ul,
+.preview-area  ol {
+  padding-left: 1.5em;
+}
+a {
+  color: #42b983;
+  font-weight: inherit;
+}
+.preview-area  blockquote {
+  margin: 0 0 1.2em;
+  padding-left: 20px;
+  border-left: 4px solid #42b983;
+}
+.preview-area  blockquote p {
+  font-weight: 600;
+  padding: 1.2em 0;
+}
+.preview-area  iframe {
+  margin: 1em 0;
+}
+.preview-area table {
+  width 100%
+  border: 2px solid #fff
+  margin: 1.2em auto;
+  padding: 1em;
+}
+.preview-area table td,
+.preview-area table th {
+  line-height: 1.6em;
+  padding: 0.5em 1.4em;
+  border: none;
+}
+.preview-area table td {
+  background-color: #f5f5f5;
+}
+.preview-area table th {
+  background-color: #42b983;
+  color: #fff;
+  padding-top: 0.85em;
+  padding-bottom: 0.85em;
+  text-align: left;
+}
+.preview-area table tbody code {
+  background-color: #efefef;
+}
+.preview-area  p.tip {
+  padding: 12px 24px 12px 30px;
+  margin: 2em 0;
+  border-left: 4px solid #f66;
+  background-color: #f8f8f8;
+  position: relative;
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+}
+.preview-area  p.tip:before {
+  position: absolute;
+  top: 14px;
+  left: -12px;
+  background-color: #f66;
+  color: #fff;
+  content: "!";
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 20px;
+  font-weight: bold;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+}
+.preview-area  p.tip code {
+  background-color: #efefef;
+}
+.preview-area  p.tip em {
+  color: #34495e;
+}
+code
+  color: #e96900;
+  padding: 3px 5px;
+  margin: 0 2px;
+  border-radius: 2px;
+  white-space: normal;
+pre
+  padding: 1.2em 1.4em;
+  line-height: 1.5em;
+  margin 0
+  margin-bottom: 1.2em;
+  color: $dark;
+  overflow: auto
+  white-space pre
+pre code
+  color: $dark;
+  white-space pre
+.guide-links {
+  margin-top: 2em;
+  height: 1em;
+}
+.gutter pre
+  color #999
+
+pre
+  color #525252
+
+pre .function .keyword,
+pre .constant
+  color #0092db
+
+pre .keyword,
+pre .attribute
+  color #e96900
+
+pre .number,
+pre .literal
+  color #ae81ff
+
+pre .tag,
+pre .tag .title,
+pre .change,
+pre .winutils,
+pre .flow,
+pre .lisp .title,
+pre .clojure .built_in,
+pre .nginx .title,
+pre .tex .special
+  color #2973b7
+
+pre .class .title
+  color #fff
+
+pre .symbol,
+pre .symbol .string,
+pre .value,
+pre .regexp
+  color #42b983
+
+pre .title
+  color #a6e22e
+
+pre .tag .value,
+pre .string,
+pre .subst,
+pre .haskell .type,
+pre .preprocessor,
+pre .ruby .class .parent,
+pre .built_in,
+pre .sql .aggregate,
+pre .django .template_tag,
+pre .django .variable,
+pre .smalltalk .class,
+pre .javadoc,
+pre .django .filter .argument,
+pre .smalltalk .localvars,
+pre .smalltalk .array,
+pre .attr_selector,
+pre .pseudo,
+pre .addition,
+pre .stream,
+pre .envvar,
+pre .apache .tag,
+pre .apache .cbracket,
+pre .tex .command,
+pre .prompt
+  color #42b983
+
+pre .comment,
+pre .java .annotation,
+pre .python .decorator,
+pre .template_comment,
+pre .pi,
+pre .doctype,
+pre .deletion,
+pre .shebang,
+pre .apache .sqbracket,
+pre .tex .formula
+  color #b3b3b3
+
+pre .coffeescript .javascript,
+pre .javascript .xml,
+pre .tex .formula,
+pre .xml .javascript,
+pre .xml .vbscript,
+pre .xml .css,
+pre .xml .cdata
+  opacity 0.5
+

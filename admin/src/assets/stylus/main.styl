@@ -1,0 +1,83 @@
+@import '_variables'
+@import '_mixins'
+@import '_minireset'
+@import '_schemes'
+@import "scrollbar"
+@import "post"
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url("./assets/fonts/sourcesanspro.woff2") format("woff2"), url("/fonts/sourcesanspro.woff") format("woff");
+  font-weight: normal;
+  font-style: normal
+}
+
+body
+  font-family $font-family-base
+  font-size $font-size-base
+  line-height 2
+  color $dark
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+body, html
+  margin 0
+  height 100%
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  margin 1em 0
+  font-weight bold
+
+h1
+  font-size 24px
+  +mobile() {
+    font-size 20px
+  }
+
+h2
+  font-size 22px
+  +mobile() {
+    font-size 18px
+  }
+
+h3
+  font-size 20px
+  +mobile() {
+    font-size 16px
+  }
+
+h4
+  font-size 18px
+  +mobile() {
+    font-size 14px
+  }
+
+h5
+  font-size 16px
+  +mobile() {
+    font-size 12px
+  }
+
+h6
+  font-size 14px
+  +mobile() {
+    font-size 10px
+  }
+
+// Custom Link
+a
+  position relative
+  text-decoration none
+
+.clearfix
+  clearfix()
+
+::selection {
+  background: $vue;
+  color: #fff;
+}

@@ -1,0 +1,91 @@
+// Position
+.rel
+  position relative
+.abs
+  position absolute
+
+// Display
+.dn
+  display none
+.db
+  display block
+// Float
+.fl
+  float left
+.fr
+  float right
+
+// Margin Or Padding
+for $mx in 20
+  .mx{$mx}
+    margin-left $mx px
+    margin-right $mx px
+for $my in 20 50
+  .my{$my}
+    margin-top $my px
+    margin-bottom $my px
+for $mb in 0 10
+  .mb{$mb}
+    margin-bottom $mb px
+
+// Text Align
+.tal
+  text-align left
+.tac
+  text-align center
+.tar
+  text-align right
+
+// Line Height
+for $lh in 110
+  .lh{$lh}
+    line-height (110 / 100)
+// Text Overflow
+.text-overflow
+  text-overflow: ellipsis
+  white-space: nowrap
+  overflow: hidden
+
+// Font Size
+for $fz in 15 20 40 50
+  .fz{$fz}
+    font-size $fz px
+
+// Font Weight
+.fb
+  font-weight bold
+.fn
+  font-weight normal
+
+// Color
+.dark
+  color $dark
+.vue
+  color $vue
+
+
+// Overflow
+.ovh
+  overflow hidden
+.ova
+  overflow auto
+
+// Absolute Center
+.absolute-center
+  position absolute
+  top 0; right 0; bottom 0; left 0
+  margin auto
+
+// Clearfix
+.clearfix
+  clearfix()
+// Others
+.circle
+  border-radius 50%
+.mask
+  position: fixed
+  left 0
+  top 0
+  width 100%
+  height @width
+  background rgba(0, 0, 0, .3)
