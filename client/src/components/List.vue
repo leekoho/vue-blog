@@ -8,7 +8,7 @@
           </router-link>
         </h1>
         <p class="post-header__time">
-          {{ post.createTime }}
+          {{ post.createTime | time }}
         </p>
       </header>
       <div class="post-body highlight" v-html="markdown(getExcerpt(post.markdown))"></div>

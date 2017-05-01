@@ -52,7 +52,6 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   if (to.meta.requireAuth) {
     if (window.localStorage.token) {
-      console.log(window.localStorage.token)
       Axios.defaults.headers.common['Authorization'] = 'Bearer ' + window.localStorage.token // 全局设定header的token验证，注意Bearer后有个空格
       next()
     } else {

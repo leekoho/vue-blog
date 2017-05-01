@@ -21,6 +21,7 @@ const state = {
   articlesList: [],
   publishArticlesList: [],
   unPublishArticlesList: [],
+  updateType: 'article',
   disType: true,
   currentArticle: [],
   defaultMarkdown: 'Title\n---\n\nExcerpt\n\n<!--more-->\n\n',
@@ -42,6 +43,7 @@ const mutations = {
   },
   selectArticle (state, article) {
     state.currentArticle = article
+    state.updateType = 'article'
   },
   updateTextarea (state, val) {
     state.currentArticle.markdown = val
@@ -97,18 +99,30 @@ const mutations = {
     })
   },
   updateArticle (state, id) {
-    api.updateArticle(id, {
-      markdown: state.currentArticle.markdown,
-      updateTime: Date.now()
-    }).then(() => {
-      state.toastrConf.show = true
-      state.toastrConf.type = 'success'
-      state.toastrConf.message = '更新成功'
-    }).catch(() => {
-      state.toastrConf.show = true
-      state.toastrConf.type = 'error'
-      state.toastrConf.message = '更新失败'
-    })
+    if (state.updateType === 'article') {
+      api.updateArticle(id, {
+        markdown: state.currentArticle.markdown,
+        updateTime: Date.now()
+      }).then(() => {
+        state.toastrConf.show = true
+        state.toastrConf.type = 'success'
+        state.toastrConf.message = '更新成功'
+      }).catch(() => {
+        state.toastrConf.show = true
+        state.toastrConf.type = 'error'
+        state.toastrConf.message = '更新失败'
+      })
+    } else {
+      api.updateAbout(state.currentArticle).then(res => {
+        state.toastrConf.show = true
+        state.toastrConf.type = 'success'
+        state.toastrConf.message = '更新成功'
+      }).catch(() => {
+        state.toastrConf.show = true
+        state.toastrConf.type = 'error'
+        state.toastrConf.message = '更新失败'
+      })
+    }
   },
   login (state, data) {
     data.password = md5(data.password)
@@ -132,6 +146,16 @@ const mutations = {
     state.toastrConf.show = true
     state.toastrConf.type = 'success'
     state.toastrConf.message = '退出成功'
+  },
+  selectAbout (state) {
+    state.updateType = 'about'
+    api.getAbout().then(res => {
+      state.currentArticle = res.data.data
+    }).catch(() => {
+      state.toastrConf.show = true
+      state.toastrConf.type = 'error'
+      state.toastrConf.message = '数据获取失败'
+    })
   }
 }
 

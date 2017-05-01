@@ -47,14 +47,13 @@ export default new Router({
       component: Post,
       meta: { scrollToTop: true }
     }, {
+      path: '/archive',
+      name: 'Archive',
+      component: Archive
+    }, {
       path: '/about',
       name: 'About',
       component: About,
-      meta: { scrollToTop: true }
-    }, {
-      path: '/archive',
-      name: 'Archive',
-      conponent: Archive,
       meta: { scrollToTop: true }
     }, {
       path: '/error',

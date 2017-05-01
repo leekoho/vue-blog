@@ -2,6 +2,7 @@
  * Created by leekoho on 2017/4/25.
  */
 import Article from '../models/article'
+import moment from 'moment'
 
 export async function getArticlesList(ctx) {
   // 'limit' field must be numeric.
@@ -58,6 +59,7 @@ export async function getArticle(ctx) {
 
 export async function createArticle(ctx) {
   const {markdown, display} = ctx.request.body
+  console.log(moment(Date.now()).format('LL'))
   const article = await Article.create({
     markdown,
     display

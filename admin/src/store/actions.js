@@ -13,6 +13,8 @@ export const unPublishArticle = makeAction('unPublishArticle')
 export const updateArticle = makeAction('updateArticle')
 export const login = makeAction('login')
 export const loginOut = makeAction('loginOut')
+export const selectAbout = makeAction('selectAbout')
+
 export function publishArticle (context, id) {
   context.commit('updateArticle', id)
   context.commit('publishArticle', id)

@@ -20,6 +20,9 @@
         <li @click="togglePreview">
           <button><i class="fa fa-columns"></i></button>
         </li>
+        <li @click="selectAbout">
+          <button><i class="fa fa-user"></i></button>
+        </li>
         <li @click="loginOut">
           <button><i class="fa fa-power-off"></i></i></button>
         </li>
@@ -67,7 +70,8 @@
         'unPublishArticle',
         'publishArticle',
         'updateArticle',
-        'loginOut'
+        'loginOut',
+        'selectAbout'
       ]),
       updateTextarea (e) {
         this.$store.commit('updateTextarea', e.target.value)
@@ -102,7 +106,8 @@
     },
     computed: {
       ...mapState({
-        currentArticle: state => state.currentArticle
+        currentArticle: state => state.currentArticle,
+        updataType: state => state.updateType
       })
     }
   }

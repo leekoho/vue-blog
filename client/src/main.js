@@ -4,11 +4,19 @@ import Vue from 'vue'
 import Blog from './Blog'
 import router from './router'
 import axios from 'axios'
+import moment from 'moment'
 import filter from './filters/filters'
 
 // Vue.filter('marked', markdown)
 Vue.prototype.$http = axios
+Vue.prototype.moment = moment
 
+Vue.filter('time', val => {
+  return moment(val).format('L')
+})
+Vue.filter('year', val => {
+  return moment(val).year()
+})
 Vue.filter('title', filter.getTitle)
 // Vue.filter('excerpt', filter.getExcerpt)
 

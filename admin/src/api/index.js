@@ -37,5 +37,13 @@ export default {
 
   login (data) {
     return Axios.post('/api/token', data)
+  },
+
+  getAbout () {
+    return Axios.get('/api/about')
+  },
+
+  updateAbout (data) {
+    return Axios.patch('/api/about', data)
   }
 }

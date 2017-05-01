@@ -3,8 +3,9 @@
     <div class="post highlight">
       <div class="post-header">
         <h1 class="post-header__center"><span class="post-header__title">{{ post.markdown | title }}</span></h1>
-        <h2 class="post-header__time">{{ post.createTime }}</h2>
+        <p class="post-header__time">{{ post.createTime | time}}</p>
       </div>
+      <p class="tip" v-if="isUpdate">该文章已于 {{post.updateTime | time}} 更新</p>
       <div class="post-body" v-html="markdown(getContent(post.markdown))"></div>
     </div>
   </div>
@@ -27,6 +28,11 @@
           console.log(err)
           this.$router.push({ name: 'Error' })
         })
+      }
+    },
+    computed: {
+      isUpdate () {
+        return this.moment(this.post.createTime).isBefore(this.post.updateTime, 'hour')
       }
     },
     beforeRouteEnter (to, from, next) {
